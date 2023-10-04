@@ -8,7 +8,7 @@ OBJS = $(SOURCES:.c=.o)
 all: $(EXECUTABLE) 
 
 $(EXECUTABLE): $(OBJS)
-    $(CC) $(CFLAGS) $(LDFLAGS) -o $(EXECUTABLE) $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $(EXECUTABLE) $(OBJS)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
