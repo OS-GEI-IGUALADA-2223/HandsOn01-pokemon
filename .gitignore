@@ -4,4 +4,4 @@ src/pokemon-lib/*.o
 
 # Executables
 src/main
-src/pokemon-lib/test
+src/pokemon-lib/pokemon
