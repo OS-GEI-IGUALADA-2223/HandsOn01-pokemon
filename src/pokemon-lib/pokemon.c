@@ -41,3 +41,31 @@ void destroy_pokemon(Pokemon* pokemon) {
 void set_pokemon_id(Pokemon* pokemon, int id){
     pokemon->pokemon_id = id;
 }
+
+int  get_pokemon_id(Pokemon* pokemon){
+    return pokemon->pokemon_id;
+}
+
+void set_pokemon_name(Pokemon* pokemon, char* name){
+    strcpy(pokemon->name, name);
+}
+
+char*  get_pokemon_name(Pokemon* pokemon){
+    return pokemon->name;
+}
+
+void set_pokemon_height(Pokemon* pokemon, double height){
+    pokemon->height = height;
+}
+
+double  get_pokemon_height(Pokemon* pokemon){
+    return pokemon->height;
+}
+
+void set_pokemon_weight(Pokemon* pokemon, double weight){
+    pokemon->weight = weight;
+}
+
+double  get_pokemon_weight(Pokemon* pokemon){
+    return pokemon->weight;
+}

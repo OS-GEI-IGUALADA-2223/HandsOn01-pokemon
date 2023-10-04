@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic
 LDFLAGS = -fsanitize=undefined -fsanitize=address -fsanitize=leak
-EXECUTABLE = main
-SOURCES = main.c pokemon-lib/pokemon.c
+EXECUTABLE = pokemon
+SOURCES = $(wildcard *.c)
 OBJS = $(SOURCES:.c=.o)
 
 all: $(EXECUTABLE) 
@@ -13,7 +13,7 @@ $(EXECUTABLE): $(OBJS)
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-execute: $(EXECUTABLE)
+test: $(EXECUTABLE)
 	./$(EXECUTABLE)
 
 clean:

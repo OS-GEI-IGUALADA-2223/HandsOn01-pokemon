@@ -3,7 +3,7 @@
  */
 
 #include <stdio.h>
-#include "pokemon.h"
+#include "pokemon-lib/pokemon.h"
 
 int main() {
     Pokemon* pikachu = create_pokemon(25, "Pikachu", 0.4, 6.0);

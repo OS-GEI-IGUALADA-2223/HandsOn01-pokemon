@@ -1,5 +1,7 @@
 # Object files
 src/*.o
+src/pokemon-lib/*.o
 
 # Executables
-src/pokemon
+src/main
+src/pokemon-lib/test
