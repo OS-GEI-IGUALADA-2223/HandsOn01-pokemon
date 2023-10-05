@@ -73,11 +73,30 @@ void test_imprimir() {
     destroy_pokemon(pikachu);
 }
 
+void test_crear_pokemon_cadena() 
+{
+    char pikachu_str[1000] = "25 Pikachu 0.4 6.0";
+    Pokemon* pikachu = crear_des_de_cadena(pikachu_str);
+    
+    if ( get_pokemon_id(pikachu) != 25 ||
+         strcmp(get_pokemon_name(pikachu), "Pikachu") != 0 ||
+         get_pokemon_height(pikachu) != 0.4 ||
+         get_pokemon_weight(pikachu) != 6.0 
+        ){
+        printf("ERROR: test_crear_pokemon_cadena NO SUPERAT. Dades incorrectes.\n");
+    } else {
+        printf("Test de test_crear_pokemon_cadena passat amb èxit.\n");
+    }
+
+    destroy_pokemon(pikachu);
+}
+
 
 
 
 int main() {
     test_crear_pokemon();
     test_imprimir();
+    test_crear_pokemon_cadena();
     return 0;
 }

@@ -72,3 +72,15 @@ void set_pokemon_weight(Pokemon* pokemon, double weight){
 double  get_pokemon_weight(Pokemon* pokemon){
     return pokemon->weight;
 }
+
+Pokemon* crear_des_de_cadena(char *cadena) {
+    Pokemon* p = malloc(sizeof(struct pokemon));
+    p->name = malloc(sizeof(char) * 100);
+    if (p == NULL) {
+        fprintf(stderr, "Error creant el pokemon\n");
+        return NULL;
+    }
+
+    sscanf(cadena, "%d %s %lf %lf", &p->pokemon_id, p->name, &p->height, &p->weight);
+    return p;
+}

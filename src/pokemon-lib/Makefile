@@ -17,6 +17,6 @@ test: $(EXECUTABLE)
 	./$(EXECUTABLE)
 
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(TARGET) $(OBJS) *.txt
 
 .PHONY: all clean

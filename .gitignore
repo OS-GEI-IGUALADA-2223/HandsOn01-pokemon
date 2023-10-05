@@ -5,3 +5,4 @@ src/pokemon-lib/*.o
 # Executables
 src/main
 src/pokemon-lib/pokemon
+src/pokemon-lib/test_output.txt

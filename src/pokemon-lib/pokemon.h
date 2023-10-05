@@ -24,4 +24,6 @@ double  get_pokemon_height(Pokemon* pokemon);
 void set_pokemon_weight(Pokemon* pokemon, double weight);
 double  get_pokemon_weight(Pokemon* pokemon);
 
+Pokemon* crear_des_de_cadena(char *cadena);
+
 #endif // _POKEMON_H_
