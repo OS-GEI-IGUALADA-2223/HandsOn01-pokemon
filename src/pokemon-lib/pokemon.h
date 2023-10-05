@@ -7,7 +7,7 @@
 
 typedef struct pokemon Pokemon;
 
-Pokemon* create_pokemon(int pokemon_id, char *name, double height, double weight);
+Pokemon* create_pokemon(int pokemon_id, char *name, double height, double weight,char* types[2]);
 void print_pokemon(Pokemon* pokemon, FILE *stream);
 void destroy_pokemon(Pokemon* pokemon);
 
@@ -25,5 +25,8 @@ void set_pokemon_weight(Pokemon* pokemon, double weight);
 double  get_pokemon_weight(Pokemon* pokemon);
 
 Pokemon* crear_des_de_cadena(char *cadena);
+
+char** get_pokemon_types(Pokemon* pokemon);
+void set_pokemon_types(Pokemon* pokemon, char* types[2]);
 
 #endif // _POKEMON_H_
