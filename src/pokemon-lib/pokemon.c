@@ -26,11 +26,14 @@ Pokemon* create_pokemon(int pokemon_id, char *name, double height, double weight
     return pokemon;
 }
 
-void print_pokemon(Pokemon* pokemon) {
-    printf("Pokemon: %s\n", pokemon->name);
-    printf("Pokemon ID: %d\n", pokemon->pokemon_id);
-    printf("Pokemon Height: %f\n", pokemon->height);
-    printf("Pokemon Weight: %f\n", pokemon->weight);
+void print_pokemon(Pokemon* pokemon, FILE *stream) {
+    if (stream == NULL) {
+        stream = stdout;
+    }
+    fprintf(stream, "Pokemon: %s\n", pokemon->name);
+    fprintf(stream, "Pokemon ID: %d\n", pokemon->pokemon_id);
+    fprintf(stream, "Pokemon Height: %f\n", pokemon->height);
+    fprintf(stream, "Pokemon Weight: %f\n", pokemon->weight);
 }
 
 void destroy_pokemon(Pokemon* pokemon) {

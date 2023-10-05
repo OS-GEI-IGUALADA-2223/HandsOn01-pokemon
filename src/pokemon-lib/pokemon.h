@@ -8,7 +8,7 @@
 typedef struct pokemon Pokemon;
 
 Pokemon* create_pokemon(int pokemon_id, char *name, double height, double weight);
-void print_pokemon(Pokemon* pokemon);
+void print_pokemon(Pokemon* pokemon, FILE *stream);
 void destroy_pokemon(Pokemon* pokemon);
 
 // GETTERS I SETTERS
