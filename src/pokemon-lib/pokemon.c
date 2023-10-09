@@ -36,19 +36,25 @@ void print_pokemon(Pokemon* pokemon, FILE *stream) {
     if (stream == NULL) {
         stream = stdout;
     }
-    fprintf(stream, "Pokemon: %s\n", pokemon->name);
-    fprintf(stream, "Pokemon ID: %d\n", pokemon->pokemon_id);
-    fprintf(stream, "Pokemon Height: %f\n", pokemon->height);
-    fprintf(stream, "Pokemon Weight: %f\n", pokemon->weight);
-    fprintf(stream, "Types: %s & %s\n", pokemon->types[0], pokemon->types[1]);
+    if (pokemon->name != NULL)
+        fprintf(stream, "Pokemon: %s\n", pokemon->name);
+    if (pokemon->pokemon_id >= 0)
+        fprintf(stream, "Pokemon ID: %d\n", pokemon->pokemon_id);
+    if (pokemon->height >= 0)    
+        fprintf(stream, "Pokemon Height: %f\n", pokemon->height);
+    if (pokemon->weight >= 0)
+        fprintf(stream, "Pokemon Weight: %f\n", pokemon->weight);
+    if (pokemon->types[0] != NULL && pokemon->types[1] != NULL)
+        fprintf(stream, "Types: %s & %s\n", pokemon->types[0], pokemon->types[1]);
 }
 
 void destroy_pokemon(Pokemon* pokemon) {
-    free(pokemon->name);
+    if (pokemon->name != NULL) free(pokemon->name);
     for (int i=0; i<2; i++){
-        free(pokemon->types[i]);
+        if (pokemon->types[i] != NULL) free(pokemon->types[i]);
     }
-    free(pokemon);
+
+    if (pokemon != NULL) free(pokemon);
 }
 
 void set_pokemon_id(Pokemon* pokemon, int id){
@@ -60,6 +66,9 @@ int  get_pokemon_id(Pokemon* pokemon){
 }
 
 void set_pokemon_name(Pokemon* pokemon, char* name){
+    if (pokemon->name == NULL)
+        pokemon->name = malloc( (strlen(name) +1) * sizeof(char));
+    
     strcpy(pokemon->name, name);
 }
 
@@ -89,6 +98,8 @@ char** get_pokemon_types(Pokemon* pokemon){
 
 void set_pokemon_types(Pokemon* pokemon, char* types[2]){
     for (int i=0; i<2; i++){
+        if (pokemon->types[i] == NULL)
+            pokemon->types[i] = malloc( (strlen(types[i]) +1) * sizeof(char));
         strcpy(pokemon->types[i], types[i]);
     }
 }
